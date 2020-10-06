@@ -17,3 +17,17 @@ Concepts, 10th Edition* by Silberschatz, Galvin, and Gagne.
 To run the make file, enter `make`
 
 To run the example program, enter `./example`
+
+To check for memory leaks, enter `make check-leaks`
+
+To check for race conditions, enter `make check-threads`
+
+To check for both, `make check`
+
+### Tip
+
+Note that `make check-threads` reports that there is already a possible
+race condition.
+
+As-is, the code is safe to run, but the conflicts reported should help
+you determine where to apply mutex locks.
