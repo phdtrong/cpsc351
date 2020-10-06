@@ -24,10 +24,15 @@ To check for race conditions, enter `make check-threads`
 
 To check for both, `make check`
 
-### Tip
+### Tips
 
-Note that `make check-threads` reports that there is already a possible
-race condition.
+1. Note that `make check-threads` reports that there is already a possible
+   race condition.
 
-As-is, the code is safe to run, but the conflicts reported should help
-you determine where to apply mutex locks.
+   The code is safe to run as-is, but the conflicts reported should help
+   you determine where to apply mutex locks.
+
+2. If you are using WSL, `make check-threads` will fail with a
+   segmentation fault. To check thread behavior with Helgrind you will
+   need to run the code on a standard Linux virtual machine.
+
