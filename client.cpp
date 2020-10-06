@@ -24,7 +24,7 @@ int main()
     data work = {5, 10};
 
     ThreadPool pool;
-    pool.submit(&add, &work);
+    pool.submit(add, &work);
 
     // may be helpful
     // sleep(3);

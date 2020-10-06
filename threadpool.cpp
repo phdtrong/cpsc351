@@ -35,7 +35,7 @@ void *ThreadPool::worker(void *param)
 
 void ThreadPool::execute(void (*somefunction)(void *p), void *p)
 {
-    (*somefunction)(p);
+    somefunction(p);
 }
 
 ThreadPool::ThreadPool()
