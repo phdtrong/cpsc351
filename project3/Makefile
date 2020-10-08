@@ -3,7 +3,7 @@ CXXFLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -pthread
 .PHONY: check check-leaks check-threads clean
 
 example: client.o threadpool.o
-	$(CXX) $(CXXFLAGS) -o example $^
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 check: check-leaks check-threads
 
