@@ -1,8 +1,8 @@
 CXXFLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -pthread
 TARGETS = deadlock-mutex deadlock-semaphore deadlock-named-semaphore
-LDLIBS = -lrt
+#LDLIBS = -lrt
 
-.PHONY: test check check-leaks check-threads clean
+.PHONY: test clean
 
 all: $(TARGETS)
 
