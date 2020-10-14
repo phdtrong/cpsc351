@@ -8,6 +8,10 @@ using std::endl;
 Scheduler::Scheduler()
 {
     next_tid = 1;
+
+    // initially only a single queue
+    auto queue = new list<Task *>;
+    tasks.push_back(queue);
 }
 
 void Scheduler::add(string name, int priority, int burst)
@@ -20,13 +24,17 @@ void Scheduler::add(string name, int priority, int burst)
     task->priority = priority;
     task->burst = burst;
 
-    tasks.push_back(task);
+    // add to first queue
+    tasks[0]->push_back(task);
 }
 
 Scheduler::~Scheduler()
 {
-    for (auto task : tasks) {
-        delete task;
+    for (list<Task *> *queue : tasks) {
+        for (Task *task : *queue) {
+            delete task;
+        }
+        delete queue;
     }
 }
 

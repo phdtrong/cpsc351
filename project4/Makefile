@@ -1,6 +1,6 @@
 # makefile for scheduling program
 
-CXXFLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic
+CXXFLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -fsanitize=address
 
 TARGETS = driver libschedule_rr.so libschedule_fcfs.so libschedule_sjf.so libschedule_priority.so libschedule_priority_rr.so
 LDLIBS = -ldl

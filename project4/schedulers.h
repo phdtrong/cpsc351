@@ -2,12 +2,14 @@
 #define SCHEDULERS_H_
 
 #include <string>
+#include <vector>
 #include <list>
 
 #include "task.h"
 #include "cpu.h"
 
 using std::string;
+using std::vector;
 using std::list;
 
 
@@ -28,7 +30,9 @@ class Scheduler {
         virtual Task *pickNextTask() = 0;
     protected:
         int next_tid;
-        list<Task *> tasks;
+
+        // multi-level queue
+        vector<list<Task *> *> tasks;
 };
 
 typedef Scheduler* creator();
