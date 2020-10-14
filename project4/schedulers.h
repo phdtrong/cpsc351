@@ -1,5 +1,5 @@
-#ifndef SCHEDULERS_H_
-#define SCHEDULERS_H_
+#ifndef SCHEDULERS_H
+#define SCHEDULERS_H
 
 #include <string>
 #include <vector>

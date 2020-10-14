@@ -1,5 +1,5 @@
-#ifndef CPU_H_
-#define CPU_H_
+#ifndef CPU_H
+#define CPU_H
 
 #include "task.h"
 
