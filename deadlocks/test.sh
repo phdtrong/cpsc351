@@ -1,28 +1,13 @@
 #!/bin/sh
+executable="$1"
 
-echo Will we deadlock? Mutex edition
+echo Will we lock up?
 for i in $(seq 1 100); do
-    timeout 5s ./deadlock-mutex
+    timeout 5s "./$executable" > /dev/null
     if [ $? -eq 124 ]; then
-        echo Yes, we deadlocked.
-        break
+        echo Hung on try "$i".
+        exit
     fi
 done
 
-echo Will we deadlock? Semaphore edition
-for i in $(seq 1 100); do
-    timeout 5s ./deadlock-semaphore
-    if [ $? -eq 124 ]; then
-        echo Yes, we deadlocked.
-        break
-    fi
-done
-
-echo Will we deadlock? Named semaphore edition
-for i in $(seq 1 100); do
-    timeout 5s ./deadlock-named-semaphore
-    if [ $? -eq 124 ]; then
-        echo Yes, we deadlocked.
-        break
-    fi
-done
+echo Apparently not.

@@ -55,6 +55,20 @@ void Mutex::lock()
     }
 }
 
+bool Mutex::trylock()
+{
+    errno = pthread_mutex_trylock(&mutex);
+
+    if (errno == 0) {
+        return true;
+    } else if (errno == EBUSY) {
+        return false;
+    } else {
+        perror("pthread_mutex_trylock");
+        exit(EXIT_FAILURE);
+    }
+}
+
 void Mutex::unlock()
 {
     errno = pthread_mutex_unlock(&mutex);

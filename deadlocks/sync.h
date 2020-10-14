@@ -20,6 +20,7 @@ class Mutex {
         Mutex();
         ~Mutex();
         void lock();
+        bool trylock();
         void unlock();
 
     private:

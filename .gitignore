@@ -3,6 +3,7 @@ driver
 deadlock-mutex
 deadlock-named-semaphore
 deadlock-semaphore
+livelock-mutex
 
 # From <https://github.com/github/gitignore> C++.gitignore
 
