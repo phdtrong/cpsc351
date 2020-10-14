@@ -7,5 +7,5 @@ Source file                    | Description
 `deadlock-named-semaphore.cpp` | Deadlock on `sem_t *` with `sem_open`()
 `livelock-mutex.cpp`           | Livelock on `pthread_mutex_t`
 `sync.cpp`                     | Lightweight C++ wrappers around POSIX threads and synchronization constructs
-`test.sh`                      | Uses `timeout(1)` to determine if an executable has deadlocked
+`try.sh`                       | Use `timeout(1)` to see if an executable will hang
 
